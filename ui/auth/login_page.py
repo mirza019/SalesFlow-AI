@@ -67,6 +67,6 @@ def render_login(*,session_expired:bool=False)->None:
             st.markdown("**Choose a demonstration role**")
             st.caption("Use the email alias or short username. These accounts contain synthetic portfolio data only.")
             st.table({"Work email":["admin@salesops.local","manager@salesops.local","builder@salesops.local"],"Password":[demo_password]*3,"Role":["Administrator","Sales Manager","Citizen Developer"]})
-        crm_url=os.getenv("CRM_WEB_URL","http://127.0.0.1:8001")
+        crm_url=os.getenv("CRM_WEB_URL","?view=crm")
         st.markdown('<div class="crm-entry-label">Open the separate CRM simulator without signing in.</div>',unsafe_allow_html=True)
         st.link_button("↗ Go to CRM",crm_url,width="content")

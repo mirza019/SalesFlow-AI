@@ -11,6 +11,11 @@ apply_theme()
 if not table_exists("users"):
     initialize_database(overwrite=False,profile="mvp",seed=42)
 
+if st.query_params.get("view") == "crm":
+    from ui.crm_page import render_crm
+    render_crm()
+    st.stop()
+
 session_expired="user" in st.session_state and not session_is_valid(st.session_state)
 if "user" not in st.session_state or session_expired:
     if session_expired:clear_session(st.session_state)

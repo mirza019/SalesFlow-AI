@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: salesflow
+      POSTGRES_USER: salesflow
+      POSTGRES_PASSWORD: salesflow
+    ports: ["5432:5432"]
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+  backend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/backend.Dockerfile
+    env_file: .env
+    ports: ["8000:8000"]
+    depends_on: [db, redis]
+  frontend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/frontend.Dockerfile
+    ports: ["5173:5173"]
+    depends_on: [backend]
+

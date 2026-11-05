@@ -1,0 +1,1 @@
+"""opportunities dataset generation domain."""

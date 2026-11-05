@@ -1,0 +1,30 @@
+{
+  "database": "/Volumes/Study and Work/Projects/SalesFlow AI/database/salesops.db",
+  "profile": "mvp",
+  "seed": 42,
+  "sales_records": 9802,
+  "tables": {
+    "customers": 198,
+    "customer_contacts": 475,
+    "sales_representatives": 6,
+    "products_services": 20,
+    "sales_opportunities": 792,
+    "opportunity_line_items": 1782,
+    "quotations": 990,
+    "quotation_line_items": 2178,
+    "sales_orders": 475,
+    "order_line_items": 951,
+    "sales_activities": 1386,
+    "approval_requests": 159,
+    "sales_targets": 71,
+    "exchange_rates": 119,
+    "workflow_definitions": 2,
+    "workflow_executions": 119,
+    "rpa_execution_logs": 79
+  },
+  "demo_users": [
+    "admin",
+    "manager",
+    "builder"
+  ]
+}

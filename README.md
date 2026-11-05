@@ -85,6 +85,20 @@ Imagine that a sales manager wants to reduce the number of overdue opportunities
 | Power Platform Blueprint | Explore how the prototype maps to Power Apps, Power Automate, Dataverse, Copilot Studio, DLP, CoE and ALM. | Provides a practical transition path from Python prototype to governed enterprise low-code architecture. |
 | CRM Workspace | Search opportunity records, review important values and create only approval-matched follow-up tasks without signing into the main workspace. | Shows the final operational destination of a governed workflow and works in the hosted Streamlit deployment. |
 
+## Product tour
+
+### Sales Intelligence dashboard
+
+The dashboard gives managers an immediate view of total and weighted pipeline, win rate, overdue opportunities, and expiring quotations. Filters support focused analysis by period and region, while the charts explain pipeline development and how total value is distributed across sales stages.
+
+![Sales Intelligence dashboard showing KPIs, pipeline trend and stage distribution](docs/assets/sales-intelligence-dashboard.png)
+
+### Workflow Studio
+
+Workflow Studio helps a citizen developer start from a governed template instead of building an automation from nothing. The user can select a trigger, data source, condition and action, require manager approval, limit the preview, and inspect the execution path before running the workflow.
+
+![Workflow Studio showing templates, configuration controls and execution preview](docs/assets/workflow-studio.png)
+
 ## System architecture
 
 ```mermaid

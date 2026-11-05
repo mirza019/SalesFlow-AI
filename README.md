@@ -16,7 +16,13 @@ The separate, no-login CRM workspace is available through the **Go to CRM** butt
 
 ## Purpose
 
-Sales organizations often have useful data spread across CRM systems, quotations, activities, spreadsheets, and workflow tools. Teams can see individual records but still struggle to answer operational questions such as:
+SalesOps AI is designed to help a sales organization understand its pipeline, find work that needs attention, design repeatable processes, and automate approved actions safely.
+
+In many organizations, sales information is spread across CRM systems, quotation tools, spreadsheets, emails, activity logs, and reporting platforms. A manager may be able to open each system, but still cannot quickly see the complete situation. Important quotations may expire, opportunities may become overdue, CRM fields may remain incomplete, and repetitive follow-up work may depend on manual reminders.
+
+This application brings those activities into one demonstration workspace. It does not replace every enterprise system. Instead, it shows how those systems can be connected through a governed business application that combines analytics, AI assistance, workflow automation, approvals, RPA, and audit records.
+
+The system is intended to answer practical questions such as:
 
 - Which opportunities need attention now?
 - Why did the win rate change?
@@ -27,27 +33,57 @@ Sales organizations often have useful data spread across CRM systems, quotations
 
 SalesOps AI demonstrates a governed response to those problems. It provides verified analytics, grounded AI interpretation, reusable automation templates, exact-payload approvals, audit evidence, and a path toward an enterprise Power Platform architecture.
 
+## What the system does
+
+At a simple level, the application follows this process:
+
+1. **Collect and organize sales data.** It stores synthetic customers, opportunities, quotations, activities, representatives, workflow records, approvals, and audit events in a relational database.
+2. **Calculate reliable business metrics.** The application calculates pipeline value, weighted pipeline, win rate, overdue opportunities, expiring quotations, stage distribution, and regional performance directly from the data.
+3. **Highlight sales risks.** Dashboards and attention lists show stalled opportunities, expiring quotations, missing CRM information, and other records that may require action.
+4. **Explain the information with AI.** A user can ask a sales question in ordinary language. The system first runs a controlled data tool and then gives the verified result to Gemini for interpretation.
+5. **Convert ideas into specifications.** A business user can describe a requirement such as “create a follow-up process for overdue opportunities.” Requirements Studio turns that idea into structured triggers, conditions, actions, data needs, risks, and acceptance criteria.
+6. **Build and test workflows.** Workflow Studio provides reusable templates and validated configuration. Users can preview affected records and run a test before activating an automation.
+7. **Request approval for data-changing actions.** If a workflow will modify a CRM record, it must request approval. The approval is tied to the exact action, target record, and payload, so it cannot be reused for a different change.
+8. **Perform and verify the approved action.** The integration layer or browser robot performs the approved CRM operation and checks that the result was saved.
+9. **Record evidence.** Important events are written to the audit log, including workflow runs, approval decisions, AI conversations, CRM actions, and failures.
+
+## Example user journey
+
+Imagine that a sales manager wants to reduce the number of overdue opportunities:
+
+1. The manager opens **Sales Intelligence** and sees the number and value of overdue opportunities.
+2. They ask the **AI Agent** which records need attention and why.
+3. The agent calls an allowlisted database tool and displays the verified opportunity evidence separately from its explanation.
+4. The manager describes a desired follow-up process in **Requirements Studio**.
+5. A citizen developer uses the resulting specification to configure an overdue follow-up workflow in **Workflow Studio**.
+6. The workflow is previewed and tested without changing CRM data.
+7. A manager reviews and approves the exact follow-up action.
+8. The CRM integration creates the approved task and verifies that it was persisted.
+9. **Governance & Approvals** shows who requested, approved, and executed the action.
+
 ## Why it is useful
 
-- **Sales managers** receive a consolidated view of pipeline health, conversion, overdue opportunities, quotation risk, regional performance, and data quality.
-- **Sales operations teams** can convert recurring business problems into validated workflow specifications and repeatable automation.
-- **Citizen developers** get templates, test mode, approval rules, lifecycle states, and implementation guidance.
-- **Application owners** can review access, approvals, versions, executions, and audit evidence.
-- **Solution architects** can evaluate integrations, data modelling, AI boundaries, RPA trade-offs, and a Power Platform migration path.
+- **Sales managers** receive one view of pipeline health, conversion, overdue opportunities, quotation risk, regional performance, and data quality. This helps them prioritize coaching and follow-up instead of manually combining reports.
+- **Sales representatives** can identify opportunities and quotations that need immediate attention and see approved follow-up tasks in the CRM workspace.
+- **Sales operations teams** can convert recurring business problems into clear technical specifications and repeatable automation instead of relying on undocumented manual processes.
+- **Citizen developers** receive templates, test mode, approval rules, lifecycle states, and implementation guidance that help them build without bypassing organizational controls.
+- **Application owners and governance teams** can review roles, approvals, workflow versions, executions, and audit evidence.
+- **Solution architects** can evaluate integration patterns, relational data modelling, AI boundaries, RPA trade-offs, security controls, and a Power Platform migration path.
+- **Business stakeholders** can see a working prototype before committing to a larger production implementation.
 
 ## Core capabilities
 
-| Capability | What it provides |
-|---|---|
-| Sales Intelligence | Pipeline KPIs, trends, stage distribution, regional analysis, data quality and attention lists |
-| AI Agent & Assistant | Gemini interpretation grounded in allowlisted, validated database tools with evidence shown separately |
-| Requirements Studio | Translation of plain-language sales needs into structured technical specifications |
-| Workflow Studio | Templates, validated configuration, preview, test execution, versioning and lifecycle state |
-| Integration & RPA Hub | CRM connectivity, exact-payload approvals and browser automation for legacy interfaces |
-| Governance & Approvals | Role permissions, approval review, audit evidence and controlled system-changing actions |
-| Citizen Developer Hub | Reusable patterns, safe implementation guidance and adoption support |
-| Power Platform Blueprint | Mapping to Power Apps, Power Automate, Dataverse, Copilot Studio, DLP, CoE and ALM |
-| Separate CRM Simulator | A FastAPI interface demonstrating approved CRM follow-up persistence |
+| Capability | What the user can do | Why it matters |
+|---|---|---|
+| Sales Intelligence | Review KPIs, pipeline trends, stage distribution, regional performance, data-quality issues and prioritized attention lists. | Gives managers a clear operational picture and helps them focus on the highest-risk records. |
+| AI Agent & Assistant | Ask sales questions in natural language and receive an explanation based on controlled, verified database tools. | Makes analysis easier while keeping factual evidence separate from AI-generated interpretation. |
+| Requirements Studio | Describe a business need and generate a structured specification containing goals, triggers, conditions, actions, data requirements and acceptance criteria. | Reduces misunderstanding between business stakeholders and technical delivery teams. |
+| Workflow Studio | Start from a template, configure workflow logic, validate it, preview affected records, run tests, create versions and control lifecycle state. | Allows automation ideas to be tested safely before activation. |
+| Integration & RPA Hub | Review connector status, prepare CRM actions and use browser automation when a legacy application has no suitable API. | Demonstrates how modern applications can work with both APIs and older user interfaces. |
+| Governance & Approvals | Review pending requests, approve or reject exact actions, inspect roles and examine audit evidence. | Prevents an AI agent or automation from making unrestricted changes to business systems. |
+| Citizen Developer Hub | Use reusable patterns, guidance, guardrails and delivery checklists. | Helps business-led development remain supportable, secure and consistent. |
+| Power Platform Blueprint | Explore how the prototype maps to Power Apps, Power Automate, Dataverse, Copilot Studio, DLP, CoE and ALM. | Provides a practical transition path from Python prototype to governed enterprise low-code architecture. |
+| CRM Workspace | Search opportunity records, review important values and create only approval-matched follow-up tasks without signing into the main workspace. | Shows the final operational destination of a governed workflow and works in the hosted Streamlit deployment. |
 
 ## System architecture
 

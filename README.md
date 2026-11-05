@@ -4,6 +4,12 @@
 
 SalesOps AI is a portfolio-grade business application showing how sales data, AI assistance, workflow automation, approvals, integrations, and citizen-development governance can work together. It converts fragmented records into operational insight, turns plain-language requirements into structured workflows, and keeps system-changing actions reviewable and approval-bound.
 
+### Live application
+
+**[Open SalesOps AI on Streamlit Community Cloud](https://salesflowai.streamlit.app/)**
+
+The separate, no-login CRM workspace is available through the **Go to CRM** button on the application login page.
+
 ![SalesOps AI login experience](docs/assets/salesops-login.png)
 
 > This repository uses synthetic data and local demonstration accounts. It is designed for solution prototyping and architecture demonstration, not as an internet-ready production system.
@@ -345,4 +351,4 @@ The Streamlit application can be deployed independently, but the current CRM URL
 
 ## Usage
 
-This repository is intended for learning, prototyping, solution architecture demonstrations, and portfolio review. Review security, licensing, privacy, and operational requirements before adapting it for organizational use.
+Try the hosted application at **[salesflowai.streamlit.app](https://salesflowai.streamlit.app/)**. This repository is intended for learning, prototyping, solution architecture demonstrations, and portfolio review. Review security, licensing, privacy, and operational requirements before adapting it for organizational use.
